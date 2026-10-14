@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Diman Fathurohman | Full-Stack Developer, Machine Learning Engineer, Data
+      Analyst
+    </title>
+    <meta
+      name="description"
+      content="Diman Fathurohman is an Informatics Engineering graduate (Cum Laude) building full-stack web platforms with Next.js and Laravel, and computer vision models with PyTorch."
+    />
+    <meta
+      property="og:title"
+      content="Diman Fathurohman | Software Engineer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack applications, machine learning research, and data-driven systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#070d1f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #070d1f;
+        --panel: rgba(255, 255, 255, 0.045);
+        --line: rgba(139, 170, 255, 0.16);
+        --tx: #e8eeff;
+        --mu: #9aa8cb;
+        --blue: #4f8cff;
+        --cy: #22d3ee;
+        --r: 18px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+      body {
+        font:
+          400 16px/1.65 "Plus Jakarta Sans",
+          system-ui,
+          sans-serif;
+        color: var(--tx);
+        background: var(--bg)
+          radial-gradient(
+            900px 520px at 88% -4%,
+            rgba(79, 140, 255, 0.2),
+            transparent 60%
+          )
+          fixed;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img,
+      svg {
+        max-width: 100%;
+        display: block;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        padding: 72px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+      }
+      h2 {
+        font-size: clamp(26px, 3.4vw, 36px);
+        font-weight: 800;
+      }
+      .lead {
+        color: var(--mu);
+        max-width: 62ch;
+        margin-top: 12px;
+      }
+      .head {
+        margin-bottom: 32px;
+      }
+      .glass {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font: 600 14px/1 inherit;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--tx);
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background 0.2s;
+      }
+      .btn svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+      .btn:hover {
+        border-color: var(--cy);
+        transform: translateY(-1px);
+      }
+      .btn.pri {
+        background: var(--blue);
+        border-color: var(--blue);
+        color: #fff;
+      }
+      .btn.pri:hover {
+        background: #6aa0ff;
+      }
+      .tag {
+        display: inline-block;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #bcd2ff;
+        background: rgba(79, 140, 255, 0.12);
+        border: 1px solid rgba(79, 140, 255, 0.24);
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      :focus-visible {
+        outline: 2px solid var(--cy);
+        outline-offset: 3px;
+      }
+      /* header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(7, 13, 31, 0.74);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .nav ul {
+        display: flex;
+        gap: 26px;
+      }
+      .nav ul a {
+        font-size: 14px;
+        color: var(--mu);
+      }
+      .nav ul a:hover,
+      .nav ul a.on {
+        color: #fff;
+      }
+      #menu {
+        display: none;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        justify-content: center;
+      }
+      /* hero */
+      .hero {
+        padding: 72px 0 40px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #bcd2ff;
+        padding: 6px 14px;
+      }
+      .badge i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--cy);
+        box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+      }
+      h1 {
+        font-size: clamp(40px, 6.4vw, 68px);
+        font-weight: 800;
+        margin: 22px 0 14px;
+      }
+      .role {
+        font-size: clamp(17px, 2.2vw, 22px);
+        font-weight: 600;
+        color: #cfdcff;
+      }
+      .role b {
+        color: var(--cy);
+        font-weight: 500;
+        margin: 0 6px;
+      }
+      .hero .lead {
+        font-size: 17px;
+        margin-top: 18px;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 26px;
+        margin-top: 30px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        color: var(--mu);
+        font-size: 14px;
+      }
+      .facts strong {
+        color: var(--tx);
+      }
+      .photo {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/5;
+        max-width: 400px;
+        justify-self: end;
+        width: 100%;
+        padding: 0;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo figcaption {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 16px;
+        font-size: 13px;
+        color: var(--mu);
+        background: rgba(7, 13, 31, 0.62);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .photo figcaption b {
+        display: block;
+        color: #fff;
+        font-size: 15px;
+      }
+      .rise {
+        animation: rise 0.7s ease both;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+      }
+      /* stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .stat {
+        padding: 22px;
+      }
+      .stat b {
+        display: block;
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 800;
+        color: var(--cy);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+      .stat span {
+        font-size: 14px;
+        color: var(--mu);
+      }
+      /* projects */
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition:
+          transform 0.25s,
+          border-color 0.25s,
+          box-shadow 0.25s;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(34, 211, 238, 0.45);
+        box-shadow: 0 18px 40px -18px rgba(34, 211, 238, 0.35);
+      }
+      .shot {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: #0b1735;
+        overflow: hidden;
+      }
+      .shot img,
+      .shot svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card .body {
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+      }
+      .card h3 {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .card.sm h3 {
+        font-size: 17px;
+      }
+      .card p {
+        color: var(--mu);
+        font-size: 15px;
+      }
+      .card.sm p {
+        font-size: 14px;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--mu);
+      }
+      .hl li {
+        position: relative;
+        padding-left: 20px;
+        font-size: 14px;
+        color: #c9d6f5;
+      }
+      .hl li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: var(--cy);
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .kpis div {
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(79, 140, 255, 0.07);
+      }
+      .kpis b {
+        display: block;
+        font-size: 18px;
+        color: var(--cy);
+        font-weight: 800;
+      }
+      .kpis span {
+        font-size: 12px;
+        color: var(--mu);
+        line-height: 1.3;
+        display: block;
+      }
+      .acts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: auto;
+        padding-top: 6px;
+      }
+      .acts .btn {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+      .card.wide {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+      }
+      .card.wide .shot {
+        aspect-ratio: auto;
+        min-height: 320px;
+      }
+      .sub {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 48px 0 22px;
+      }
+      /* experience */
+      .exp {
+        display: grid;
+        gap: 18px;
+      }
+      .exp .row {
+        padding: 26px;
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 24px;
+      }
+      .exp h3 {
+        font-size: 19px;
+      }
+      .exp .when {
+        color: var(--mu);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+      .exp .hl {
+        margin-top: 12px;
+        display: grid;
+        gap: 6px;
+      }
+      .exp .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .exp .two .row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 22px;
+      }
+      .exp .two h3 {
+        font-size: 17px;
+      }
+      .item + .item {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+      .item h4 {
+        font-size: 15px;
+      }
+      .item p {
+        font-size: 14px;
+        color: var(--mu);
+      }
+      .item a {
+        color: var(--cy);
+        font-size: 14px;
+      }
+      /* skills & certs */
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .skills .glass {
+        padding: 22px;
+      }
+      .skills h3 {
+        font-size: 16px;
+        margin-bottom: 14px;
+      }
+      .soft {
+        margin-top: 20px;
+        color: var(--mu);
+        font-size: 14px;
+      }
+      .certs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .cert {
+        display: flex;
+        gap: 14px;
+        padding: 12px;
+        align-items: center;
+        transition: border-color 0.2s;
+      }
+      .cert:hover {
+        border-color: rgba(34, 211, 238, 0.45);
+      }
+      .cert img,
+      .cert .ph {
+        width: 84px;
+        height: 62px;
+        border-radius: 10px;
+        object-fit: cover;
+        flex: none;
+        background: #0b1735;
+        border: 1px solid var(--line);
+      }
+      .cert .ph {
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        color: var(--cy);
+      }
+      .cert b {
+        display: block;
+        font-size: 14px;
+        line-height: 1.3;
+      }
+      .cert span {
+        font-size: 12px;
+        color: var(--mu);
+      }
+      /* contact */
+      .contact {
+        text-align: center;
+        padding: 48px 24px;
+      }
+      .contact .lead {
+        margin: 12px auto 0;
+      }
+      .contact .cta {
+        justify-content: center;
+      }
+      .icons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .icons a {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        color: var(--mu);
+        transition: 0.2s;
+      }
+      .icons a:hover {
+        color: #fff;
+        border-color: var(--cy);
+        transform: translateY(-2px);
+      }
+      .icons svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+      }
+      .icons .ln {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      footer {
+        padding: 28px 0 40px;
+        text-align: center;
+        color: var(--mu);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+      @media (max-width: 900px) {
+        .hero-grid,
+        .card.wide,
+        .grid2,
+        .exp .row,
+        .exp .two {
+          grid-template-columns: 1fr;
+        }
+        .photo {
+          justify-self: start;
+          max-width: 340px;
+        }
+        .card.wide .shot {
+          min-height: 0;
+          aspect-ratio: 16/9;
+        }
+        .grid3,
+        .skills,
+        .certs {
+          grid-template-columns: 1fr 1fr;
+        }
+        .stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        #menu {
+          display: inline-flex;
+        }
+        .nav ul {
+          display: none;
+          position: absolute;
+          top: 64px;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          gap: 0;
+          background: rgba(7, 13, 31, 0.96);
+          border-bottom: 1px solid var(--line);
+          padding: 8px 24px 14px;
+        }
+        .nav ul.open {
+          display: flex;
+        }
+        .nav ul a {
+          display: block;
+          padding: 12px 0;
+          font-size: 15px;
+        }
+      }
+      @media (max-width: 600px) {
+        section {
+          padding: 56px 0;
+        }
+        .grid3,
+        .skills,
+        .certs {
+          grid-template-columns: 1fr;
+        }
+        .kpis {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="gh" viewBox="0 0 24 24">
+          <path
+            d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.46-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.55 2.34 1.1 2.91.84.09-.66.35-1.1.63-1.36-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.04a9.3 9.3 0 0 1 5.01 0c1.91-1.31 2.75-1.04 2.75-1.04.55 1.41.2 2.45.1 2.71.64.71 1.03 1.62 1.03 2.73 0 3.91-2.35 4.77-4.58 5.02.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"
+          />
+        </symbol>
+        <symbol id="wa" viewBox="0 0 24 24">
+          <path
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.17 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"
+          />
+        </symbol>
+        <symbol id="li" viewBox="0 0 24 24">
+          <path
+            d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"
+          />
+        </symbol>
+        <symbol id="ext" viewBox="0 0 24 24">
+          <path
+            d="M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14V4zM5 6h6v2H6v10h10v-5h2v7H4V6h1z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header>
+      <div class="wrap nav">
+        <a class="logo" href="#about">Diman Fathurohman</a>
+        <ul id="links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button
+          id="menu"
+          class="btn"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h16v2H4zm0 4h16v2H4zm0 4h16v2H4z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="hero">
+        <div class="wrap hero-grid">
+          <div class="rise">
+            <p class="badge glass">
+              <i></i>Open to full-time roles and internships
+            </p>
+            <h1>Diman Fathurohman</h1>
+            <p class="role">
+              Full-Stack Developer <b>|</b> Machine Learning Engineer
+              <b>|</b> Data Analyst
+            </p>
+            <p class="lead">
+              Informatics Engineering graduate (Cum Laude, GPA 3.83) who builds
+              full-stack web platforms and lightweight computer vision systems.
+              I work across Next.js, Laravel, and PyTorch, from authenticated,
+              role-based web applications to deep learning models evaluated for
+              edge computing.
+            </p>
+            <div class="cta">
+              <a class="btn pri" href="#projects">View projects</a>
+              <a class="btn" href="CV.pdf" target="_blank" rel="noopener"
+                >Download CV</a
+              >
+              <a class="btn" href="#contact">Contact me</a>
+            </div>
+            <div class="facts">
+              <span><strong>Next.js, Laravel, PyTorch</strong> core stack</span>
+              <span><strong>1.46°</strong> gaze error at ~10,800 FPS</span>
+              <span><strong>60+</strong> members led as General Chair</span>
+            </div>
+          </div>
+          <figure class="photo glass rise" style="animation-delay: 0.12s">
+            <img src="profile.jpg" alt="Portrait of Diman Fathurohman" />
+            <figcaption>
+              <b>Software Engineering and Machine Learning</b>Based in Bandung,
+              Indonesia
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section style="padding-top: 24px">
+        <div class="wrap">
+          <div class="stats" id="stats"></div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <div class="head">
+            <h2>Featured projects</h2>
+            <p class="lead">
+              Full-stack platforms and machine learning research I built end to
+              end, from data models and APIs to the interface.
+            </p>
+          </div>
+          <div class="grid2" id="featured"></div>
+          <h3 class="sub">More projects and publications</h3>
+          <div class="grid3" id="more"></div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="wrap">
+          <div class="head">
+            <h2>Experience</h2>
+            <p class="lead">
+              Hands-on engineering and research first, followed by leadership
+              and community work.
+            </p>
+          </div>
+          <div class="exp" id="exp"></div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="wrap">
+          <div class="head"><h2>Skills</h2></div>
+          <div class="skills" id="skillgrid"></div>
+          <p class="soft">
+            Soft skills: Leadership, Problem Solving, Analytical Thinking,
+            Teamwork, Communication, Time Management, Adaptability. Languages:
+            Indonesian (native), English (academic proficiency).
+          </p>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="wrap">
+          <div class="head">
+            <h2>Certifications</h2>
+            <p class="lead">
+              Credentials in data, databases, networking, and programming.
+            </p>
+          </div>
+          <div class="certs" id="certgrid"></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrap">
+          <div class="glass contact">
+            <h2>Let's build something together</h2>
+            <p class="lead">
+              I am looking for full-time entry-level roles and internships in
+              software engineering, machine learning, and data. Email is the
+              fastest way to reach me.
+            </p>
+            <div class="cta">
+              <a class="btn pri" href="mailto:dimanfn24@gmail.com"
+                >dimanfn24@gmail.com</a
+              ><a class="btn" href="CV.pdf" target="_blank" rel="noopener"
+                >Download CV</a
+              >
+            </div>
+            <div class="icons">
+              <a
+                href="https://wa.me/6289524349518"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                ><svg><use href="#wa" /></svg
+              ></a>
+              <a href="mailto:dimanfn24@gmail.com" aria-label="Email"
+                ><svg class="ln" viewBox="0 0 24 24">
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                  <path d="M3 6.5l9 6.5 9-6.5" /></svg
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/diman-fathurohman-56a602342"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><svg><use href="#li" /></svg
+              ></a>
+              <a
+                href="https://github.com/publisheddiman"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                ><svg><use href="#gh" /></svg
+              ></a>
+              <a
+                href="https://instagram.com/dimaanftr_"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><svg class="ln" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.2"
+                    cy="6.8"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      &copy; <span id="yr">2026</span> Diman Fathurohman. Bandung, Indonesia.
+    </footer>
+
+    <script>
+      const GH = "https://github.com/publisheddiman";
+      /* Fill in gh (repo URL) and demo (live URL) per project. Buttons only appear when a URL is set. */
+      const mock = {
+        k: '<svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#0b1735"/><rect width="56" height="180" fill="#0e1e45"/><rect x="12" y="16" width="32" height="6" rx="3" fill="#4f8cff"/><g fill="#16295a"><rect x="70" y="30" width="76" height="130" rx="8"/><rect x="156" y="30" width="76" height="130" rx="8"/><rect x="242" y="30" width="68" height="130" rx="8"/></g><g fill="#27427f"><rect x="78" y="42" width="60" height="26" rx="5"/><rect x="78" y="76" width="60" height="26" rx="5"/><rect x="164" y="42" width="60" height="26" rx="5"/><rect x="250" y="42" width="52" height="26" rx="5"/></g><path d="M138 55h18M224 55h18" stroke="#22d3ee" stroke-width="2"/></svg>',
+        t: '<svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="#0b1735"/><rect width="56" height="180" fill="#0e1e45"/><rect x="12" y="16" width="32" height="6" rx="3" fill="#4f8cff"/><g fill="#16295a"><rect x="70" y="24" width="72" height="40" rx="8"/><rect x="150" y="24" width="72" height="40" rx="8"/><rect x="230" y="24" width="80" height="40" rx="8"/><rect x="70" y="76" width="240" height="88" rx="8"/></g><g fill="#27427f"><rect x="80" y="90" width="220" height="8" rx="4"/><rect x="80" y="110" width="220" height="8" rx="4"/><rect x="80" y="130" width="220" height="8" rx="4"/></g><path d="M80 52l20-10 18 6 20-14" stroke="#22d3ee" stroke-width="2" fill="none"/></svg>',
+      };
+      const featured = [
+        {
+          wide: 1,
+          type: "Full-stack",
+          mock: "k",
+          img: "nexusflow-preview.png",
+          title: "NexusFlow: Full-Stack Project Management Platform",
+          date: "Sep 2026",
+          desc: "Full-stack project management platform designed to manage engineering workflows with authentication, role-based dashboards, task dependency workflows, and client data isolation.",
+          hl: [
+            "Role-based dashboard",
+            "JWT authentication with RBAC and ABAC authorization",
+            "Task dependency workflow",
+            "Client data isolation",
+            "Full-stack API integration",
+          ],
+          tech: [
+            "Next.js 16",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS",
+            "TanStack Query",
+            "Zustand",
+            "PostgreSQL",
+            "Prisma",
+            "JWT",
+            "RBAC",
+            "ABAC",
+          ],
+          gh: GH,
+          demo: "",
+        },
+        {
+          type: "Full-stack",
+          mock: "t",
+          img: "santosa-preview.png",
+          title: "Santosa Hospital Information System",
+          date: "Oct 2026",
+          desc: "Hospital information system integrated with REST API services for managing patients, visits, doctors, diagnoses, and healthcare workflows.",
+          hl: [
+            "CRUD operations",
+            "API authentication",
+            "Data validation and error handling",
+            "Dashboard analytics",
+            "Filtering and pagination",
+          ],
+          tech: ["Laravel", "REST API", "SQL Server", "JavaScript"],
+          gh: GH,
+          demo: "",
+        },
+        {
+          type: "Research",
+          img: "gaze-estimation-preview.png",
+          title: "EfficientNet-B0 Gaze Estimation Research",
+          date: "Feb 2025 – Jul 2026",
+          desc: "Computer vision research on lightweight gaze estimation for edge computing environments. An EfficientNet-B0 model with a custom regression head predicts 3D gaze direction, paired with a Streamlit demo built on MediaPipe.",
+          kpis: [
+            ["~1.46°", "Mean angular error"],
+            ["~10,800", "FPS throughput"],
+            ["~427K", "MPIIGaze images"],
+          ],
+          tech: [
+            "PyTorch",
+            "EfficientNet-B0",
+            "MPIIGaze",
+            "MediaPipe",
+            "Streamlit",
+          ],
+          gh: GH,
+          demo: "",
+        },
+      ];
+      const more = [
+        {
+          type: "Full-stack",
+          img: "sadina-preview.jpeg",
+          title: "SADINA School Attendance System",
+          date: "Nov 2024 – Jan 2025",
+          desc: "Attendance system built during my internship at SMKS Al-Mumtaz, with a teacher portal, teaching schedules, statistics, and attendance reports.",
+          tech: ["Laravel", "MySQL", "Tailwind CSS"],
+          gh: GH,
+        },
+        {
+          type: "Mobile",
+          img: "moneytracker.jpeg",
+          title: "Money Tracker App",
+          date: "Nov 2024 – Jan 2025",
+          desc: "Android finance tracker with authentication, transaction logging, categorization, data export, and financial summaries.",
+          tech: ["Kotlin", "Android SDK"],
+          gh: "https://github.com/publisheddiman/MoneyTracker1",
+        },
+        {
+          type: "Full-stack",
+          img: "eureka-app-preview.jpeg",
+          title: "EUREKA! Q&A Platform for SAINTEK Students",
+          date: "Sep – Dec 2024",
+          desc: "Academic Q&A platform covering 7 SAINTEK fields, developed with Agile methodology and featuring search and answer validation.",
+          tech: ["Agile", "Full-stack web"],
+          paper: [
+            "https://doi.org/10.20944/preprints202406.1951.v1",
+            "Read paper",
+          ],
+        },
+        {
+          type: "Research",
+          img: "jurnal-quran-preview.jpeg",
+          title: "Word2Vec and K-Means Thematic Grouping",
+          date: "KJRT Vol. 3 Issue 2, 2025",
+          desc: "Published research that groups Qur'an verse translations by theme using Word2Vec embeddings and K-Means clustering.",
+          tech: ["Python", "Word2Vec", "K-Means", "NLP"],
+          paper: ["https://doi.org/10.66948/kjrt.32.18", "Read paper"],
+        },
+        {
+          type: "Research",
+          img: "msme-saas-preview.jpeg",
+          title: "MSME Digital Transformation with Cloud SaaS",
+          date: "Research paper",
+          desc: "Research on implementing a cloud-based SaaS application for MSME efficiency using Agile Scrum. Usability scored 75.75 (Good) on the System Usability Scale.",
+          tech: ["SaaS", "Agile Scrum", "SUS 75.75"],
+        },
+      ];
+      const stats = [
+        ["10", "Certifications and trainings"],
+        ["8", "Projects and research works"],
+        ["427K+", "Images processed for ML research"],
+        ["60+", "Organization members led"],
+      ];
+      const exp = [
+        {
+          t: "Full-Stack Developer Intern",
+          o: "SMKS Al-Mumtaz",
+          d: "Sep – Nov 2024",
+          hl: [
+            "Independently designed and built SADINA, a student attendance web application, with Laravel and Tailwind CSS.",
+            "Integrated MySQL to support end-to-end attendance data processing and reporting.",
+            "Delivered a teacher portal, teaching schedules, statistics, and attendance reports.",
+          ],
+        },
+        {
+          t: "Research Experience",
+          o: "Undergraduate thesis and publications",
+          d: "2024 – 2026",
+          items: [
+            [
+              "Feasibility Analysis of EfficientNet-B0 for Gaze Estimation on Edge Computing",
+              "Trained a model on ~427,000 MPIIGaze images, reaching ~1.46° mean angular error at ~10,800 FPS (Feb 2025 – Jul 2026).",
+            ],
+            [
+              "Thematic Grouping of Quranic Verse Translations with Word2Vec and K-Means",
+              "Published in the Khazanah Journal of Religion and Technology, Vol. 3 Issue 2 (2025).",
+              "https://doi.org/10.66948/kjrt.32.18",
+            ],
+            [
+              "Digital Transformation of MSMEs with Cloud Computing SaaS",
+              "Agile Scrum implementation evaluated with the System Usability Scale (75.75, Good).",
+            ],
+          ],
+        },
+        {
+          t: "General Chair, HIMATIF",
+          o: "Informatics Engineering Student Association, UIN SGD Bandung",
+          d: "2025 – 2026",
+          two: 1,
+          hl: [
+            "Led 60+ board members across 8 departments and managed 15 programs.",
+            "Organized 10+ events with 1,000+ participants and built partnerships with 10 organizations.",
+          ],
+        },
+        {
+          t: "Community Experience",
+          o: "Podcast, student association, and developer community",
+          d: "2023 – 2025",
+          two: 1,
+          hl: [
+            "Sakti Podcast, PIC Host and Content Creator: 20+ episodes with 20+ guest speakers, 1,000+ views.",
+            "HIMATIF Secretary of Arts and Sports: supported 5+ events with 300+ participants.",
+            "Google Developer Student Clubs UIN SGD Bandung: member, 5+ technology events.",
+          ],
+        },
+      ];
+      const skills = [
+        [
+          "Programming Languages",
+          ["Python", "PHP", "JavaScript", "Java", "SQL"],
+        ],
+        [
+          "Machine Learning and Data",
+          [
+            "PyTorch",
+            "EfficientNet",
+            "Transfer Learning",
+            "Computer Vision",
+            "MediaPipe",
+            "Model Training and Evaluation",
+            "Data Analysis",
+            "Data Processing",
+            "Data Visualization",
+            "Excel and PivotTable",
+          ],
+        ],
+        [
+          "Web Development",
+          [
+            "Laravel",
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "TanStack Query",
+            "Zustand",
+            "Prisma",
+            "REST API",
+            "HTML",
+            "CSS",
+            "MySQL",
+            "PostgreSQL",
+          ],
+        ],
+        ["Mobile Development", ["Kotlin", "Android SDK"]],
+        [
+          "Tools and Infrastructure",
+          ["Git/GitHub", "Linux Server", "HPC", "Figma"],
+        ],
+        ["Methodologies", ["Agile", "CRISP-DM"]],
+      ];
+      const certs = [
+        [
+          "lsp.jpg",
+          "Associate Data Analyst Competency Certification",
+          "LSP Sains Data dan AI Indonesia, Dec 2025 – Dec 2028",
+        ],
+        [
+          "bnsp.jpeg",
+          "National Exam Preparation, Associate Data Analyst",
+          "BNSP, Oct 2025",
+        ],
+        [
+          "",
+          "Elements of AI (2 ECTS)",
+          "MinnaLearn and University of Helsinki, Aug 2026",
+        ],
+        [
+          "sql.jpg",
+          "Database Programming with SQL",
+          "Oracle Academy, Oct 2024",
+        ],
+        ["desain.jpg", "Database Design", "Oracle, Sep 2024"],
+        [
+          "ict.jpeg",
+          "Microsoft Office Specialist: Excel",
+          "PTIPD UIN SGD Bandung, Oct – Dec 2024",
+        ],
+        [
+          "ccna.jpg",
+          "CCNA: Introduction to Networks",
+          "Cisco Networking Academy, Jan 2025",
+        ],
+        [
+          "linux.jpg",
+          "NDG Linux Essentials",
+          "Cisco Networking Academy, Jul 2024",
+        ],
+        [
+          "dicoding.jpg",
+          "Getting Started with Java Programming",
+          "Dicoding Indonesia, May 2024",
+        ],
+        [
+          "tofl.jpg",
+          "TOEFA (Test of English for Academics)",
+          "UIN SGD Bandung, Jan 2025 – Jan 2027",
+        ],
+      ];
+      const $ = (id) => document.getElementById(id),
+        tags = (a) =>
+          '<div class="tags">' +
+          a.map((x) => '<span class="tag">' + x + "</span>").join("") +
+          "</div>";
+      const ico = (n) => '<svg><use href="#' + n + '"/></svg>';
+      function acts(p) {
+        let h = "";
+        if (p.gh)
+          h +=
+            '<a class="btn" href="' +
+            p.gh +
+            '" target="_blank" rel="noopener">' +
+            ico("gh") +
+            "GitHub</a>";
+        if (p.demo)
+          h +=
+            '<a class="btn pri" href="' +
+            p.demo +
+            '" target="_blank" rel="noopener">' +
+            ico("ext") +
+            "Live demo</a>";
+        if (p.paper)
+          h +=
+            '<a class="btn" href="' +
+            p.paper[0] +
+            '" target="_blank" rel="noopener">' +
+            ico("ext") +
+            p.paper[1] +
+            "</a>";
+        return h ? '<div class="acts">' + h + "</div>" : "";
+      }
+      function card(p, sm) {
+        const fb = p.mock ? mock[p.mock] : "";
+        return (
+          '<article class="card glass' +
+          (sm ? " sm" : "") +
+          (p.wide ? " wide" : "") +
+          '"><div class="shot">' +
+          fb +
+          '<img src="' +
+          p.img +
+          '" alt="' +
+          p.title +
+          ' preview" loading="lazy" onerror="this.remove()"></div><div class="body"><div class="meta"><span class="tag">' +
+          p.type +
+          "</span><span>" +
+          p.date +
+          "</span></div><h3>" +
+          p.title +
+          "</h3><p>" +
+          p.desc +
+          "</p>" +
+          (p.hl
+            ? '<ul class="hl">' +
+              p.hl.map((x) => "<li>" + x + "</li>").join("") +
+              "</ul>"
+            : "") +
+          (p.kpis
+            ? '<div class="kpis">' +
+              p.kpis
+                .map(
+                  (k) =>
+                    "<div><b>" + k[0] + "</b><span>" + k[1] + "</span></div>",
+                )
+                .join("") +
+              "</div>"
+            : "") +
+          tags(p.tech) +
+          acts(p) +
+          "</div></article>"
+        );
+      }
+      $("featured").innerHTML = featured.map((p) => card(p)).join("");
+      $("more").innerHTML = more.map((p) => card(p, 1)).join("");
+      $("stats").innerHTML = stats
+        .map(
+          (s) =>
+            '<div class="stat glass"><b>' +
+            s[0] +
+            "</b><span>" +
+            s[1] +
+            "</span></div>",
+        )
+        .join("");
+      const row = (e) =>
+        '<div class="row glass"><div><h3>' +
+        e.t +
+        '</h3><p class="when">' +
+        e.o +
+        "<br>" +
+        e.d +
+        "</p></div><div>" +
+        (e.items
+          ? e.items
+              .map(
+                (i) =>
+                  '<div class="item"><h4>' +
+                  i[0] +
+                  "</h4><p>" +
+                  i[1] +
+                  "</p>" +
+                  (i[2]
+                    ? '<a href="' +
+                      i[2] +
+                      '" target="_blank" rel="noopener">View publication</a>'
+                    : "") +
+                  "</div>",
+              )
+              .join("")
+          : '<ul class="hl">' +
+            e.hl.map((x) => "<li>" + x + "</li>").join("") +
+            "</ul>") +
+        "</div></div>";
+      const twoRow = (e) =>
+        '<div class="row glass"><div><h3>' +
+        e.t +
+        '</h3><p class="when">' +
+        e.o +
+        " · " +
+        e.d +
+        '</p></div><ul class="hl">' +
+        e.hl.map((x) => "<li>" + x + "</li>").join("") +
+        "</ul></div>";
+      $("exp").innerHTML =
+        exp
+          .filter((e) => !e.two)
+          .map(row)
+          .join("") +
+        '<div class="two">' +
+        exp
+          .filter((e) => e.two)
+          .map(twoRow)
+          .join("") +
+        "</div>";
+      $("skillgrid").innerHTML = skills
+        .map(
+          (s) =>
+            '<div class="glass"><h3>' + s[0] + "</h3>" + tags(s[1]) + "</div>",
+        )
+        .join("");
+      $("certgrid").innerHTML = certs
+        .map(
+          (c) =>
+            '<div class="cert glass">' +
+            (c[0]
+              ? '<img src="' +
+                c[0] +
+                '" alt="" loading="lazy" onerror="this.remove()">'
+              : '<div class="ph">AI</div>') +
+            "<div><b>" +
+            c[1] +
+            "</b><span>" +
+            c[2] +
+            "</span></div></div>",
+        )
+        .join("");
+      $("yr").textContent = new Date().getFullYear();
+      const m = $("menu"),
+        l = $("links");
+      m.onclick = () => {
+        const o = l.classList.toggle("open");
+        m.setAttribute("aria-expanded", o);
+      };
+      l.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          l.classList.remove("open");
+          m.setAttribute("aria-expanded", false);
+        }
+      });
+      const secs = [...document.querySelectorAll("main section[id]")],
+        navs = [...l.querySelectorAll("a")];
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting)
+              navs.forEach((a) =>
+                a.classList.toggle(
+                  "on",
+                  a.getAttribute("href") === "#" + e.target.id,
+                ),
+              );
+          }),
+        { rootMargin: "-45% 0px -50% 0px" },
+      );
+      secs.forEach((s) => io.observe(s));
+    </script>
+  </body>
+</html>
